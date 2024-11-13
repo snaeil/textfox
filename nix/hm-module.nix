@@ -45,10 +45,6 @@ in {
     };
   };
 
-  fontFamilyValue = lib.strings.concatStrings [ " --tf-font-family: " cfg.fontFamily ";" ];
-  fontSizeValue = lib.strings.concatStrings [ " --tf-font-size: " cfg.fontSize ";" ];
-  horizontalTabsValue = lib.strings.concatStrings [ " --tf-display-horizontal-tabs: " ( if cfg.displayHorizontalTabs then "block" else "none" ) ";" ];
-
   config = lib.mkIf cfg.enable {
     programs.firefox = {
       enable = true;
@@ -65,9 +61,9 @@ in {
     home.file.".mozilla/firefox/${cfg.profile}/chrome/config.css" = {
       text = lib.strings.concatStrings [
         ":root {"
-        fontFamilyValue
-        fontSizeValue
-        horizontalTabsValue
+        ( lib.strings.concatStrings [ " --tf-font-family: " cfg.fontFamily ";" ] )
+        ( lib.strings.concatStrings [ " --tf-font-size: " cfg.fontSize ";" ] )
+        ( lib.strings.concatStrings [ " --tf-display-horizontal-tabs: " ( if cfg.displayHorizontalTabs then "block" else "none" ) ";" ] )
         " }"
       ];
     };
