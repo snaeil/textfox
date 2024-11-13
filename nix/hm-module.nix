@@ -69,7 +69,7 @@ in {
         fontSizeValue
         horizontalTabsValue
         " }"
-      ]
+      ];
     };
   };
 }
