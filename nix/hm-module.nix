@@ -47,7 +47,7 @@ in {
 
   fontFamilyValue = lib.strings.concatStrings [ " --tf-font-family: " cfg.fontFamily ";" ];
   fontSizeValue = lib.strings.concatStrings [ " --tf-font-size: " cfg.fontSize ";" ];
-  horizontalTabsValue = lib.strings.concatStrings [ " --tf-display-horizontal-tabs: " if cfg.displayHorizontalTabs then "block" else "none" ";" ];
+  horizontalTabsValue = lib.strings.concatStrings [ " --tf-display-horizontal-tabs: " ( if cfg.displayHorizontalTabs then "block" else "none" ) ";" ];
 
   config = lib.mkIf cfg.enable {
     programs.firefox = {
