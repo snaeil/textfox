@@ -38,11 +38,6 @@ in {
       default = false;
       description = "Enables horizontal tabs at the top";
     };
-    enableSidebery = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Enable sidebery extension";
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -50,7 +45,7 @@ in {
       enable = true;
       profiles."${cfg.profile}" = {
           extraConfig = builtins.readFile "${package}/user.js";
-          extensions = if cfg.enableSidebery then [ config.nur.repos.rycee.firefox-addons.sidebery ] else [ ];
+          extensions = config.nur.repos.rycee.firefox-addons.sidebery;
       };
     };
 
