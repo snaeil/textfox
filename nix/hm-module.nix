@@ -45,7 +45,7 @@ in {
       enable = true;
       profiles."${cfg.profile}" = {
           extraConfig = builtins.readFile "${package}/user.js";
-          extensions = config.nur.repos.rycee.firefox-addons.sidebery;
+          extensions = [ config.nur.repos.rycee.firefox-addons.sidebery ];
       };
     };
 
