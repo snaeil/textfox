@@ -6,13 +6,12 @@ inputs:
   ...
 }:
 let
-  inherit (pkgs.stdenv.hostPlatform) system;
-  package = inputs.self.packages.${system}.default;
-  configDir =
+  inherit (pkgs.stdenv.hostPlatform) system;  package = inputs.self.packages.${system}.default;  configDir =
     if pkgs.stdenv.hostPlatform.isDarwin then
       "Library/Application\ Support/Firefox/Profiles/"
     else
-      ".mozilla/firefox/";
+
+          ".mozilla/firefox/";
   extensionList = lib.optionals cfg.config.tabs.vertical.sidebery.enable [
     inputs.firefox-addons.packages.${system}.sidebery
   ];
