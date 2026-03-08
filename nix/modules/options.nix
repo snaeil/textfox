@@ -25,6 +25,10 @@ in
       [ "textfox" "config" "tabs" "vertical" "margin" ]
       [ "textfox" "config" "tabs" "vertical" "sidebery" "margin" ]
     )
+    (mkRemovedOptionModule
+      [ "textfox" "config" "sidebery" ]
+      "sidebery support is dropped"
+    )
   ];
 
   options.textfox = {
@@ -114,14 +118,6 @@ in
         horizontal.enable = mkEnableOption "display of horizontal tabs.";
         vertical.enable = mkEnableOption "display of vertical tabs." // {
           default = true;
-        };
-        vertical.sidebery.enable = mkEnableOption "automatic installation of Sidebery extension." // {
-          default = true;
-        };
-        vertical.sidebery.margin = mkOption {
-          type = str;
-          default = "0.8rem";
-          description = "Margin used between elements in sidebery.";
         };
       };
 
