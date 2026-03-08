@@ -25,10 +25,7 @@ in
       [ "textfox" "config" "tabs" "vertical" "margin" ]
       [ "textfox" "config" "tabs" "vertical" "sidebery" "margin" ]
     )
-    (mkRemovedOptionModule
-      [ "textfox" "config" "sidebery" ]
-      "sidebery support is dropped"
-    )
+    (mkRemovedOptionModule [ "textfox" "config" "sidebery" ] "sidebery support is dropped")
   ];
 
   options.textfox = {
