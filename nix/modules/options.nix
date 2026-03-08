@@ -6,6 +6,7 @@
 let
   inherit (lib.options) mkOption mkEnableOption;
   inherit (lib.modules) mkRenamedOptionModule;
+  inherit (lib.modules) mkRemovedOptionModule;
   inherit (lib.strings) replaceStrings;
   inherit (lib.types) bool str;
 
