@@ -19,7 +19,7 @@ in
     )
     (mkRenamedOptionModule
       [ "textfox" "config" "sidebery" "margin" ]
-      [ "textfox" "config" "tabs" "vertical" "margin" ]
+      [ "textfox" "config" "tabs" "vertical" "sidebery" "margin" ]
     )
     (mkRenamedOptionModule
       [ "textfox" "config" "tabs" "vertical" "margin" ]
@@ -171,7 +171,7 @@ in
           --tf-border-transition: ${cfg.border.transition};
           --tf-border-width: ${cfg.border.width};
           --tf-rounding: ${cfg.border.radius};
-          --tf-margin: ${cfg.tabs.vertical.margin};
+          --tf-margin: ${cfg.tabs.vertical.sidebery.margin};
           --tf-text-transform: ${cfg.textTransform};
           --tf-display-horizontal-tabs: ${if cfg.tabs.horizontal.enable then "block" else "none"};
           --tf-display-window-controls: ${if cfg.displayWindowControls then "flex" else "none"};
