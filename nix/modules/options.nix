@@ -18,15 +18,10 @@ in
       [ "textfox" "config" "displayHorizontalTabs" ]
       [ "textfox" "config" "tabs" "horizontal" "enable" ]
     )
-    (mkRenamedOptionModule
-      [ "textfox" "config" "sidebery" "margin" ]
-      [ "textfox" "config" "tabs" "vertical" "sidebery" "margin" ]
+    (mkRemovedOptionModule
+      [ "textfox" "config" "sidebery" ]
+      "sidebery support is dropped"
     )
-    (mkRenamedOptionModule
-      [ "textfox" "config" "tabs" "vertical" "margin" ]
-      [ "textfox" "config" "tabs" "vertical" "sidebery" "margin" ]
-    )
-    (mkRemovedOptionModule [ "textfox" "config" "sidebery" ] "sidebery support is dropped")
   ];
 
   options.textfox = {
@@ -165,7 +160,6 @@ in
           --tf-border-transition: ${cfg.border.transition};
           --tf-border-width: ${cfg.border.width};
           --tf-rounding: ${cfg.border.radius};
-          --tf-margin: ${cfg.tabs.vertical.sidebery.margin};
           --tf-text-transform: ${cfg.textTransform};
           --tf-display-horizontal-tabs: ${if cfg.tabs.horizontal.enable then "block" else "none"};
           --tf-display-window-controls: ${if cfg.displayWindowControls then "flex" else "none"};
